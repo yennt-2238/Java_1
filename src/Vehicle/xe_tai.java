@@ -12,7 +12,7 @@ public class xe_tai implements tinh_thue{
 	@Override
 	public double set_tax() {
 		// TODO Auto-generated method stub
-		return (Math.round(amount*0.12));
+		return (Math.round(amount*0.13));
 	}
 
 	@Override
