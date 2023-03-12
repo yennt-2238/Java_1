@@ -3,13 +3,24 @@ package Supermarket_manager;
 import java.util.Date;
 
 public class crockeryProduct extends product {
-	private String manufacturer;
-	private Date warehouse_date;
+	String manufacturer;
+	int warehouse_date;
+	int warehouse_year;
+	int warehouse_month;
+	int current_year;
+	int current_month;
+	int current_date;
 
-	public crockeryProduct(String manufacturer, Date warehouse_date) {
+	public crockeryProduct(String manufacturer, int warehouse_date, int warehouse_year, int warehouse_month,
+			int current_year, int current_month, int current_date) {
 		super();
 		this.manufacturer = manufacturer;
 		this.warehouse_date = warehouse_date;
+		this.warehouse_year = warehouse_year;
+		this.warehouse_month = warehouse_month;
+		this.current_year = current_year;
+		this.current_month = current_month;
+		this.current_date = current_date;
 	}
 
 	public String getManufacturer() {
@@ -20,12 +31,52 @@ public class crockeryProduct extends product {
 		this.manufacturer = manufacturer;
 	}
 
-	public Date getWarehouse_date() {
+	public int getWarehouse_date() {
 		return warehouse_date;
 	}
 
-	public void setWarehouse_date(Date warehouse_date) {
+	public void setWarehouse_date(int warehouse_date) {
 		this.warehouse_date = warehouse_date;
+	}
+
+	public int getWarehouse_year() {
+		return warehouse_year;
+	}
+
+	public void setWarehouse_year(int warehouse_year) {
+		this.warehouse_year = warehouse_year;
+	}
+
+	public int getWarehouse_month() {
+		return warehouse_month;
+	}
+
+	public void setWarehouse_month(int warehouse_month) {
+		this.warehouse_month = warehouse_month;
+	}
+
+	public int getCurrent_year() {
+		return current_year;
+	}
+
+	public void setCurrent_year(int current_year) {
+		this.current_year = current_year;
+	}
+
+	public int getCurrent_month() {
+		return current_month;
+	}
+
+	public void setCurrent_month(int current_month) {
+		this.current_month = current_month;
+	}
+
+	public int getCurrent_date() {
+		return current_date;
+	}
+
+	public void setCurrent_date(int current_date) {
+		this.current_date = current_date;
 	}
 
 	@Override
@@ -40,11 +91,8 @@ public class crockeryProduct extends product {
 //		Nếu số lượng tồn kho > 50 và thời gian lưu kho > 10 ngày - đánh giá là bán chậm
 //		Các trường hợp còn lại ko đánh giá
 
-		Date current_date = new Date();
-		
-		long distance = current_date.getTime() - getWarehouse_date().getTime();
-        long diff= (distance / 1000 / 60 / 60 / 24);
-		if (getquantity_stock() > 50 && diff>10) {
+		if (current_year == warehouse_year && current_month == warehouse_month
+				&& current_date - warehouse_date > 10 & getquantity_stock() > 50) {
 			System.out.println(" đánh giá là bán chậm");
 			return;
 		}
@@ -52,5 +100,4 @@ public class crockeryProduct extends product {
 
 	}
 
-	
 }
