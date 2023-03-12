@@ -17,7 +17,11 @@ public class foodsProduct extends product {
 
 	public foodsProduct(int id, String nameProduct, int quantity_stock, double price, double vat, int mfg_year,
 			int mfg_month, int mfg_date, int exp_year, int exp_month, int exp_date, String supplier) {
-		super();
+		this.ID=id;
+		this.nameProduct= nameProduct;
+		this.quantity_stock = quantity_stock;
+		this.price= price;
+		this.vat=vat;
 		this.mfg_year = mfg_year;
 		this.mfg_month = mfg_month;
 		this.mfg_date = mfg_date;
