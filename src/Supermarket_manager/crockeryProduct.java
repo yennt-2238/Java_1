@@ -1,5 +1,6 @@
 package Supermarket_manager;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class crockeryProduct extends product {
@@ -11,9 +12,9 @@ public class crockeryProduct extends product {
 	int current_month;
 	int current_date;
 
-	public crockeryProduct(String manufacturer, int warehouse_date, int warehouse_year, int warehouse_month,
+	public crockeryProduct(int id, String nameProduct, int quantity_stock, double price, double vat,String manufacturer, int warehouse_date, int warehouse_year, int warehouse_month,
 			int current_year, int current_month, int current_date) {
-		super();
+		super(id, nameProduct, quantity_stock, price, vat);
 		this.manufacturer = manufacturer;
 		this.warehouse_date = warehouse_date;
 		this.warehouse_year = warehouse_year;
@@ -90,7 +91,7 @@ public class crockeryProduct extends product {
 		// TODO Auto-generated method stub
 //		Nếu số lượng tồn kho > 50 và thời gian lưu kho > 10 ngày - đánh giá là bán chậm
 //		Các trường hợp còn lại ko đánh giá
-
+		LocalDate aa;
 		if (current_year == warehouse_year && current_month == warehouse_month
 				&& current_date - warehouse_date > 10 & getquantity_stock() > 50) {
 			System.out.println(" đánh giá là bán chậm");

@@ -15,13 +15,31 @@ public class foodsProduct extends product {
 	int current_month;
 	int current_date;
 
-	public foodsProduct(int id, String nameProduct, int quantity_stock, double price, double vat, int mfg_year,
-			int mfg_month, int mfg_date, int exp_year, int exp_month, int exp_date, String supplier) {
-		this.ID=id;
-		this.nameProduct= nameProduct;
-		this.quantity_stock = quantity_stock;
-		this.price= price;
-		this.vat=vat;
+//	public foodsProduct(int id, String nameProduct, int quantity_stock, double price, double vat, int mfg_year,
+//			int mfg_month, int mfg_date, int exp_year, int exp_month, int exp_date, String supplier) {
+//		this.ID=id;
+//		this.nameProduct= nameProduct;
+//		this.quantity_stock = quantity_stock;
+//		this.price= price;
+//		this.vat=vat;
+//		this.mfg_year = mfg_year;
+//		this.mfg_month = mfg_month;
+//		this.mfg_date = mfg_date;
+//		this.exp_year = exp_year;
+//		this.exp_month = exp_month;
+//		this.exp_date = exp_date;
+//		this.supplier = supplier;
+//	}
+	
+	
+
+	public int getMfg_year() {
+		return mfg_year;
+	}
+
+	public foodsProduct(int id, String nameProduct, int quantity_stock, double price, double vat,int mfg_year, int mfg_month, int mfg_date, int exp_year, int exp_month, int exp_date,
+			String supplier) {
+		super(id, nameProduct, quantity_stock, price, vat);
 		this.mfg_year = mfg_year;
 		this.mfg_month = mfg_month;
 		this.mfg_date = mfg_date;
@@ -29,10 +47,6 @@ public class foodsProduct extends product {
 		this.exp_month = exp_month;
 		this.exp_date = exp_date;
 		this.supplier = supplier;
-	}
-
-	public int getMfg_year() {
-		return mfg_year;
 	}
 
 	public void setMfg_year(int mfg_year) {
@@ -94,14 +108,6 @@ public class foodsProduct extends product {
 
 	}
 
-//	public void checkValidDate() {
-//		// TODO Auto-generated method stub
-//		if (getMfg_date().compareTo(getExp_date()) <= 0) {
-//			System.out.println("Valid date");
-//			return;
-//		}
-//		System.out.println("Invalid data");
-//	}
 	public void input_current() {
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);

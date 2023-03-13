@@ -22,14 +22,16 @@ public class Car extends vehicle {
 
 	public Car(int number, String producer, String color, String owner_id, String owner_name, String owner_email,
 			int number_seat, String type_action) {
-		this.number = number;
-		this.producer = producer;
-		this.color = color;
-		this.owner_id = owner_id;
-		this.owner_name = owner_name;
-		this.owner_email = owner_email;
+		super(number, producer, color, owner_id, owner_name, owner_email);
 		this.number_seat = number_seat;
 		this.type_action = type_action;
 	}
+	@Override
+	public void displayInfo() {
+		super.displayInfo();
+		System.out.println("number of seat: " + number_seat);
+		System.out.println("==================");
+	}
+	
 
 }

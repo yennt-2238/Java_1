@@ -56,4 +56,22 @@ public abstract class vehicle {
 		this.owner_email = owner_email;
 	}
 
+	public vehicle(int number, String producer, String color, String owner_id, String owner_name, String owner_email) {
+		this.number = number;
+		this.producer = producer;
+		this.color = color;
+		this.owner_id = owner_id;
+		this.owner_name = owner_name;
+		this.owner_email = owner_email;
+	}
+	public void displayInfo() {
+		System.out.println("Biển số xe:" +number);
+		System.out.println("Nhà sản xuất:" +producer);
+		System.out.println("Màu sắc của xe: "+color);
+		System.out.println("CMND của chủ xe : "+owner_id);
+		System.out.println("Tên của chủ xe : "+ owner_name);
+		System.out.println("Mail của chủ xe : "+owner_email );
+
+	}
+
 }

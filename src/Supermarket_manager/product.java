@@ -53,4 +53,20 @@ public abstract class product {
 		this.vat = vat;
 	}
 
+	public product(int iD, String nameProduct, int quantity_stock, double price, double vat) {
+		ID = iD;
+		this.nameProduct = nameProduct;
+		this.quantity_stock = quantity_stock;
+		this.price = price;
+		this.vat = vat;
+		System.out.println("Vao day");
+	}
+//	
+//	
+//	public product() {
+//	}
+//	
+	
+	
+
 }

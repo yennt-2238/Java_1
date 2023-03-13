@@ -4,8 +4,8 @@ public class electricProduct extends product {
 	private int warranty_Time;
 	private double capacity;
 
-	public electricProduct(int warranty_Time, double capacity) {
-		super();
+	public electricProduct(int id, String nameProduct, int quantity_stock, double price, double vat,int warranty_Time, double capacity) {
+		super(id, nameProduct, quantity_stock, price, vat);
 		this.warranty_Time = warranty_Time;
 		this.capacity = capacity;
 	}
@@ -24,10 +24,6 @@ public class electricProduct extends product {
 
 	public void setCapacity(double capacity) {
 		this.capacity = capacity;
-	}
-
-	public electricProduct() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
