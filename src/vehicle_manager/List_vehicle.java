@@ -1,6 +1,9 @@
 package vehicle_manager;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class List_vehicle {
@@ -20,13 +23,8 @@ public class List_vehicle {
 	}
 
 	public void delete_vehicle(String producer) {
-//		for (vehicle i : vehiclelist) {
-//			if (i.getProducer() == producer) {
-//				vehiclelist.remove(i);
-//			}
-//		}
-		
-		for(int i = 0; i < vehiclelist.size(); i++) {
+
+		for (int i = 0; i < vehiclelist.size(); i++) {
 			if (vehiclelist.get(i).getProducer() == producer) {
 				vehiclelist.remove(i);
 			}
@@ -49,12 +47,19 @@ public class List_vehicle {
 		}
 	}
 
-	public void Search_vehicle_owner_ID(String owner_id) {
-		System.out.println("Thông tin tìm kiêm vs cmnd= " + owner_id + " là:");
-		for (vehicle i : vehiclelist) {
-			if (owner_id == i.getOwner_id()) {
-				i.displayInfo();
+	public void Sort_Vehicle() {
+		System.out.println(" Data sort là:");
+		Collections.sort(vehiclelist, new Comparator<vehicle>() {
+			@Override
+			public int compare(vehicle v1, vehicle v2) {
+				if (v1.getNumber() > v2.getNumber()) {
+					return -1;
+				} else if (v1.getNumber() < v2.getNumber()) {
+					return 1;
+				} else {
+					return 0;
+				}
 			}
-		}
+		});
 	}
 }
