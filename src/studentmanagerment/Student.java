@@ -10,18 +10,18 @@ import java.time.LocalDate;
 //Kết quả học tập gồm có tên học kỳ, điểm trung bình học kỳ đó.
 
 public class Student {
-	private int idStudent;
+	private String idStudent;
 	private String fullName;
 	private LocalDate birthDate;
-	private LocalDate yearOfAdmission;
+	private String yearOfAdmission;
 	private float score;
 	private ResultLearning resultLearning;
 
-	public int getIdStudent() {
+	public String getIdStudent() {
 		return idStudent;
 	}
 
-	public void setIdStudent(int idStudent) {
+	public void setIdStudent(String idStudent) {
 		this.idStudent = idStudent;
 	}
 
@@ -41,11 +41,11 @@ public class Student {
 		this.birthDate = birthDate;
 	}
 
-	public LocalDate getYearOfAdmission() {
+	public String getYearOfAdmission() {
 		return yearOfAdmission;
 	}
 
-	public void setYearOfAdmission(LocalDate yearOfAdmission) {
+	public void setYearOfAdmission(String yearOfAdmission) {
 		this.yearOfAdmission = yearOfAdmission;
 	}
 
@@ -61,7 +61,7 @@ public class Student {
 		return resultLearning;
 	}
 
-	public Student(int idStudent, String fullName, LocalDate birthDate, LocalDate yearOfAdmission, float score,
+	public Student(String idStudent, String fullName, LocalDate birthDate, String yearOfAdmission, float score,
 			ResultLearning resultLearning) {
 		this.idStudent = idStudent;
 		this.fullName = fullName;
@@ -78,5 +78,18 @@ public class Student {
 	public Student() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public void displaysInfor() {
+		System.out.println("Infor Student");
+		System.out.println("ID: "+getIdStudent());
+		System.out.println("Full Name: "+getFullName());
+		System.out.println("Birthdate: "+getBirthDate());
+		System.out.println("Year of Ad"+getYearOfAdmission());
+		System.out.println("Score: "+getScore());
+		
+
+		
+	}
+	
 
 }

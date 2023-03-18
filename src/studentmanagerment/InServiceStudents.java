@@ -13,10 +13,18 @@ public class InServiceStudents extends Student {
 		this.addressConect = addressConect;
 	}
 
-	public InServiceStudents(int idStudent, String fullName, LocalDate birthDate, LocalDate yearOfAdmission,
-			float score, ResultLearning resultLearning, String addressConect) {
+	public InServiceStudents(String idStudent, String fullName, LocalDate birthDate, String yearOfAdmission, float score,
+			ResultLearning resultLearning, String addressConect) {
 		super(idStudent, fullName, birthDate, yearOfAdmission, score, resultLearning);
 		this.addressConect = addressConect;
+	}
+
+	public void checkInServiceStudents() {
+		if (getAddressConect() != null) {
+			System.out.println(" This is nServiceStudents");
+			return;
+		}
+		System.out.println("This is student regular Student");
 	}
 
 }

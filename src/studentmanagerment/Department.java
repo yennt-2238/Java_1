@@ -28,4 +28,26 @@ public class Department {
 		this.studentList = studentList;
 	}
 
+	public void countRegularStudent() {
+		int count = 0;
+		for (Student i : studentList) {
+			if (i.getIdStudent().startsWith("R")) {
+				count += 1;
+			}
+			System.out.println("Số học sinh chính quy trong khoa là: " + count);
+		}
+	}
+
+	public void maxCore() {
+		Student max = new Student();
+		for (Student j : studentList) {
+			if (j.getScore() > max.getScore()) {
+				max = j;
+			}
+			System.out.println("Diểm cao nhất là: " + max.getFullName() + max.getScore());
+
+		}
+
+	}
+
 }
