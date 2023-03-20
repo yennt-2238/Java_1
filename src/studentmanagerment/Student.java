@@ -86,6 +86,7 @@ public class Student {
 			total += sub.getScoreObject();
 		}
 		return Math.round((total)) / this.resultLearning.subjects.size();
+
 	}
 
 }

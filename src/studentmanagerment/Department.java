@@ -36,9 +36,6 @@ public class Department {
 		this.studentList = studentList;
 	}
 
-//	public Department() {
-//	}
-
 	public void addRegularStudent(RegularStudents student1) {
 		studentList.add(student1);
 	}
@@ -47,18 +44,6 @@ public class Department {
 		studentList.add(student2);
 
 	}
-
-//	public void checkRegularStudents(Student j) {
-//		if (j.getIdStudent().startsWith("R")) {
-//			System.out.println("==============================");
-//			System.out.println("This is regular ");
-//			j.displaysInfor();
-//			return;
-//		}
-//		System.out.println("==============================");
-//		System.out.println(" Day khoong phai hoc sinh chinh quy");
-//
-//	}
 
 	public boolean checkRegularStudents(Student student) {
 		if (student instanceof RegularStudents) {
@@ -91,8 +76,23 @@ public class Department {
 			}
 
 		}
+
 		System.out.println("Hoc sinh co diem cao nhat la: ");
 		max.displaysInfor();
 	}
 
+	public void studentListbyLocation(String location) {
+		System.out.println("List student by location");
+		for (Student student : studentList) {
+			if (student instanceof InServiceStudents) {
+				if (((InServiceStudents) student).getAddressConect().equals(location)) {
+					student.displaysInfor();
+					return;
+				} 
+				
+			}		
+		}
+		System.out.println("không tồn tại");
+
+	}
 }
