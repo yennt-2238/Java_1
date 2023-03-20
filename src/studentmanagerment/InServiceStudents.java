@@ -11,9 +11,10 @@ public class InServiceStudents extends Student {
 		this.addressConect = addressConect;
 	}
 
-	public InServiceStudents(String idStudent, String fullName, String birthDate, String yearOfAdmission, float score,
+	public InServiceStudents(String idStudent, String fullName, String birthDate, String yearOfAdmission, float score,ResultLearning resultlearning,
 			String addressConect) {
-		super(idStudent, fullName, birthDate, yearOfAdmission, score);
+		super(idStudent, fullName, birthDate, yearOfAdmission, score,resultlearning);
+		System.out.println("aabadsadas");
 		this.addressConect = addressConect;
 	}
 

@@ -3,9 +3,6 @@ package studentmanagerment;
 import java.util.ArrayList;
 import java.util.List;
 
-import vehicle_manager.Car;
-import vehicle_manager.bike;
-
 public class Department {
 	private String nameDepartment;
 	List<Student> studentList = new ArrayList<>();
@@ -51,27 +48,38 @@ public class Department {
 
 	}
 
+//	public void checkRegularStudents(Student j) {
+//		if (j.getIdStudent().startsWith("R")) {
+//			System.out.println("==============================");
+//			System.out.println("This is regular ");
+//			j.displaysInfor();
+//			return;
+//		}
+//		System.out.println("==============================");
+//		System.out.println(" Day khoong phai hoc sinh chinh quy");
+//
+//	}
 
-	public void checkRegularStudents(Student j) {
-		if (j.getIdStudent().startsWith("R")) {
-			System.out.println("==============================");
+	public boolean checkRegularStudents(Student student) {
+		if (student instanceof RegularStudents) {
 			System.out.println("This is regular ");
-			j.displaysInfor();
-			return;
+			System.out.println("===============================");
+			return true;
 		}
-		System.out.println("==============================");
-		System.out.println(" Day khoong phai hoc sinh chinh quy");
-
+		System.out.println("This is Inservice student ");
+		System.out.println("===============================");
+		return false;
 	}
 
 	public void countRegularStudent() {
 		int count = 0;
-		for (Student i : studentList) {
-			if (i.getIdStudent().startsWith("R")) {
+		for (Student student : studentList) {
+			if (student instanceof RegularStudents) {
 				count += 1;
 			}
 		}
-		System.out.println("Số học sinh chính quy trong khoa là: " + count);
+		System.out.println("Number of regular student: " + count);
+		System.out.println("==================================");
 
 	}
 

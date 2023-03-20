@@ -1,12 +1,5 @@
 package studentmanagerment;
 
-//Xây dựng chương trình quản lý kết quả học tập của sinh viên tại một trường đại học. 
-//Có 2 loại sinh viên là sinh viên chính quy và sinh viên tại chức 
-//với các thông tin giống nhau: mã sinh viên, họ tên, ngày tháng năm sinh, năm vào học, điểm đầu vào và
-//danh sách kết quả học tập. Sinh viên tại chức có thêm thông tin nơi liên kết đào tạo (Đồng Nai, Cà Mau, …)
-//. Khoa gồm có các thông tin: tên khoa và danh sách sinh viên đang theo học. 
-//Kết quả học tập gồm có tên học kỳ, điểm trung bình học kỳ đó.
-
 public class Student {
 	private String idStudent;
 	private String fullName;
@@ -59,12 +52,15 @@ public class Student {
 		return resultLearning;
 	}
 
-	public Student(String idStudent, String fullName, String birthDate, String yearOfAdmission, float score) {
+	public Student(String idStudent, String fullName, String birthDate, String yearOfAdmission, float score,
+			ResultLearning resultlearning) {
 		this.idStudent = idStudent;
 		this.fullName = fullName;
 		this.birthDate = birthDate;
 		this.yearOfAdmission = yearOfAdmission;
 		this.score = score;
+		this.resultLearning = resultlearning;
+		
 	}
 
 	public void setResultLearning(ResultLearning resultLearning) {
@@ -82,13 +78,14 @@ public class Student {
 		System.out.println("Year of Ad: " + getYearOfAdmission());
 		System.out.println("Score: " + getScore());
 
+	}
 
-//		System.out.format("%5d | ", getIdStudent());
-//		System.out.format("%20s | ", getFullName());
-//		System.out.format("%5d | ", getBirthDate());
-//		System.out.format("%20s | ", getYearOfAdmission());
-//		System.out.format("%10.1f%n", getScore());
-
+	public double calculateAVG() {
+		double total = 0;
+		for (Subject sub : this.resultLearning.subjects) {
+			total += sub.getScoreObject();
+		}
+		return Math.round((total)) / this.resultLearning.subjects.size();
 	}
 
 }
