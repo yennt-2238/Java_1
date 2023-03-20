@@ -13,30 +13,32 @@ public class Main {
 		Subject diem2 = new Subject("Java2", 9);
 		Subject diem3 = new Subject("Java3", 8);
 		List<Subject> subjects = Arrays.asList(diem1, diem2, diem3);
+		
 		Subject diem4 = new Subject("Java", 5);
-		Subject diem5 = new Subject("Java2", 9);
-		Subject diem6 = new Subject("Java3", 8);
+		Subject diem5 = new Subject("Java2", 4);
+		Subject diem6 = new Subject("Java3", 3);
 		List<Subject> subjects1 = Arrays.asList(diem4, diem5, diem6);
+		
 		Subject diem7 = new Subject("Java", 5);
-		Subject diem8 = new Subject("Java2", 10);
-		Subject diem9 = new Subject("Java3", 7);
-		List<Subject> subjects2 = Arrays.asList(diem1, diem2, diem3);
+		Subject diem8 = new Subject("Java2", 5);
+		Subject diem9 = new Subject("Java3", 5);
+		List<Subject> subjects2 = Arrays.asList(diem7, diem8, diem9);
 
 		InServiceStudents st1 = new InServiceStudents("I_20230318", " Nguyễn Thị Yến C 1", "1995-02-01", "2018", 24,
 				new ResultLearning("Ki 1", subjects), "Cà Mau");
 		InServiceStudents st2 = new InServiceStudents("I_20230319", " Nguyễn Thị Yến C 2", "1995-02-02", "2018", 24,
 				new ResultLearning("Ki 1", subjects1), "Cà Mau");
 		InServiceStudents st3 = new InServiceStudents("I_20230320", " Nguyễn Thị Yến C 3", "1995-02-03", "2018", 30,
-				new ResultLearning("Ki 2", subjects1), "Đồng Nai");
+				new ResultLearning("Ki 2", subjects2), "Đồng Nai");
 		InServiceStudents st4 = new InServiceStudents("I_20230321", " Nguyễn Thị Yến C 4", "1995-02-04", "2019", 28,
-				new ResultLearning("Ki 2", subjects2), "Đà Nẵng");
+				new ResultLearning("Ki 2", subjects), "Đà Nẵng");
 		InServiceStudents st5 = new InServiceStudents("I_20230322", " Nguyễn Thị Yến C 5", "1995-02-05", "2020", 24,
-				new ResultLearning("Ki 2", subjects), "Cà Mau");
+				new ResultLearning("Ki 2", subjects1), "Cà Mau");
 
 		RegularStudents st6 = new RegularStudents("R_20230323", "Nguyễn Thị Yến C  6", "1995-10-10", "2020", 32,new ResultLearning("Ki 1", subjects));
-		RegularStudents st7 = new RegularStudents("R_20230324", "Nguyễn Thị Yến C  7", "1995-10-10", "2021", 28,new ResultLearning("Ki 1", subjects1));
-		RegularStudents st8 = new RegularStudents("R_20230325", "Nguyễn Thị Yến C  8", "1995-10-10", "2023", 35,new ResultLearning("Ki 1", subjects2));
-		RegularStudents st9 = new RegularStudents("R_20230326", "Nguyễn Thị Yến C  9", "1995-10-10", "2022", 40,new ResultLearning("Ki 1", subjects1));
+		RegularStudents st7 = new RegularStudents("R_20230324", "Nguyễn Thị Yến C  7", "1995-10-10", "2021", 28,new ResultLearning("Ki 2", subjects1));
+		RegularStudents st8 = new RegularStudents("R_20230325", "Nguyễn Thị Yến C  8", "1995-10-10", "2023", 35,new ResultLearning("Ki 3", subjects2));
+		RegularStudents st9 = new RegularStudents("R_20230326", "Nguyễn Thị Yến C  9", "1995-10-10", "2022", 40,new ResultLearning("Ki 4", subjects));
 		List<Student> studentList = new ArrayList<>();
 		Department dp1 = new Department("Department_1", studentList);
 		dp1.addInserviceStudent(st1);
