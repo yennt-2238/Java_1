@@ -1,7 +1,5 @@
 package studentmanagerment;
 
-import java.time.LocalDate;
-
 //Xây dựng chương trình quản lý kết quả học tập của sinh viên tại một trường đại học. 
 //Có 2 loại sinh viên là sinh viên chính quy và sinh viên tại chức 
 //với các thông tin giống nhau: mã sinh viên, họ tên, ngày tháng năm sinh, năm vào học, điểm đầu vào và
@@ -12,7 +10,7 @@ import java.time.LocalDate;
 public class Student {
 	private String idStudent;
 	private String fullName;
-	private LocalDate birthDate;
+	private String birthDate;
 	private String yearOfAdmission;
 	private float score;
 	private ResultLearning resultLearning;
@@ -33,11 +31,11 @@ public class Student {
 		this.fullName = fullName;
 	}
 
-	public LocalDate getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(LocalDate birthDate) {
+	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -61,14 +59,12 @@ public class Student {
 		return resultLearning;
 	}
 
-	public Student(String idStudent, String fullName, LocalDate birthDate, String yearOfAdmission, float score,
-			ResultLearning resultLearning) {
+	public Student(String idStudent, String fullName, String birthDate, String yearOfAdmission, float score) {
 		this.idStudent = idStudent;
 		this.fullName = fullName;
 		this.birthDate = birthDate;
 		this.yearOfAdmission = yearOfAdmission;
 		this.score = score;
-		this.resultLearning = resultLearning;
 	}
 
 	public void setResultLearning(ResultLearning resultLearning) {
@@ -78,18 +74,21 @@ public class Student {
 	public Student() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public void displaysInfor() {
-		System.out.println("Infor Student");
-		System.out.println("ID: "+getIdStudent());
-		System.out.println("Full Name: "+getFullName());
-		System.out.println("Birthdate: "+getBirthDate());
-		System.out.println("Year of Ad"+getYearOfAdmission());
-		System.out.println("Score: "+getScore());
-		
 
-		
+	public void displaysInfor() {
+		System.out.println("ID: " + getIdStudent());
+		System.out.println("Full Name: " + getFullName());
+		System.out.println("Birthdate: " + getBirthDate());
+		System.out.println("Year of Ad: " + getYearOfAdmission());
+		System.out.println("Score: " + getScore());
+
+
+//		System.out.format("%5d | ", getIdStudent());
+//		System.out.format("%20s | ", getFullName());
+//		System.out.format("%5d | ", getBirthDate());
+//		System.out.format("%20s | ", getYearOfAdmission());
+//		System.out.format("%10.1f%n", getScore());
+
 	}
-	
 
 }
